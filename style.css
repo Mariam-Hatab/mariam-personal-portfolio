@@ -1,0 +1,315 @@
+/* Global Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #2c3e50;
+    --card-bg: #ffffff;
+    --bar-bg: #e5e9ed;
+    --border-color: #d1d8dd;
+    --button-bg: #0066cc;
+    --button-text: #ffffff;
+    --link-color: #0056b3;
+    --led-glow: 0 0 20px rgba(0, 102, 204, 0.5), 0 0 40px rgba(0, 102, 204, 0.2);
+}
+
+body.dark {
+    --bg-color: #2a120f;
+    --text-color: #f9f4f1;
+    --card-bg: #360101;
+    --bar-bg: #460401;
+    --border-color: #335455;
+    --button-bg: #d90808;
+    --button-text: #ffffff;
+    --link-color: #e91919;
+    --led-glow: 0 0 25px rgba(246, 59, 59, 0.8), 0 0 50px rgba(246, 59, 59, 0.871);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: var(--bar-bg);
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    color: var(--button-bg);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.nav-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.nav-btn {
+    padding: 0.45rem 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0 0.2rem 0;
+    font-size: 2.3rem;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #af6150;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.student-id {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--button-bg);
+    background-color: var(--card-bg);
+    padding: 0.35rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.profile-section img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--button-bg);
+    box-shadow: var(--led-glow);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-section img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 35px rgba(204, 0, 0, 0.9);
+}
+
+.about-section {
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+.about-section:hover {
+    transform: translateY(-3px);
+}
+
+.about-section h2 {
+    margin-top: 0;
+    color: var(--button-bg);
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.about-card-content {
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.skills-section h2 {
+    text-align: center;
+    color: var(--button-bg);
+    margin-bottom: 2rem;
+}
+
+.card-row {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    flex: 1;
+    min-width: 280px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--button-bg);
+    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.647);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--button-bg);
+    margin-bottom: 0.8rem;
+}
+
+.card p {
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.form-section {
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    margin-bottom: 2rem;
+}
+
+.form-section h2 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--button-bg);
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #bd192c;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    padding: 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--button-bg);
+    box-shadow: 0 0 0 3px rgba(43, 132, 220, 0.877);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--button-bg);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 1.8rem;
+    background-color: var(--bar-bg);
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #2881aa;
+}
